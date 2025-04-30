@@ -1,0 +1,19 @@
+import cv2 as cv
+
+img = cv.imread('Resources/Photos/cats.jpg')
+cv.imshow('Cats', img)
+
+# Convert to grayscale
+gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
+cv.imshow('Gray', gray)
+
+# Apply Gaussian Blur (optional but helps reduce noise)
+blur = cv.GaussianBlur(gray, (5, 5), 0)
+cv.imshow('Blurred', blur)
+
+# Apply Canny Edge Detection
+edges = cv.Canny(blur, threshold1=125, threshold2=175)
+cv.imshow('Canny Edges', edges)
+
+cv.waitKey(0)
+cv.destroyAllWindows()

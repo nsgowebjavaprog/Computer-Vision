@@ -1,0 +1,42 @@
+# import cv2 as cv
+# import numpy as np
+
+# img = cv.imread('Resources/Photos/cats.jpg')
+# cv.imshow('Cats', img)
+
+# # Convert to grayscale
+# gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
+# cv.imshow('Gray', gray)
+
+# # Apply simple thresholding
+# threshold_value = 150
+# max_value = 255
+# _, thresh = cv.threshold(gray, threshold_value, max_value, cv.THRESH_BINARY)
+# cv.imshow('Simple Thresholded', thresh)
+
+# cv.waitKey(0)
+# cv.destroyAllWindows()
+
+
+
+
+
+import cv2 as cv
+import numpy as np
+
+img = cv.imread('Resources/Photos/cats.jpg')
+cv.imshow('Cats', img)
+
+# Convert to grayscale
+gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
+cv.imshow('Gray', gray)
+
+# Apply adaptive thresholding
+adaptive_thresh = cv.adaptiveThreshold(gray, 255, 
+                                       cv.ADAPTIVE_THRESH_MEAN_C, 
+                                       cv.THRESH_BINARY, 
+                                       11, 4)
+cv.imshow('Adaptive Thresholding', adaptive_thresh)
+
+cv.waitKey(0)
+cv.destroyAllWindows()
