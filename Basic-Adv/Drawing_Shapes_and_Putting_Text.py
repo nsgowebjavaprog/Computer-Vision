@@ -11,6 +11,7 @@ blank[200:300, 300:400] = (0, 255, 0)  # BGR format
 cv.imshow('Green', blank)
 
 
+
 cv.rectangle(blank, (0, 0), (250, 500), (0, 255,0), thickness=cv.FILLED)  
 cv.imshow('Rectangle', blank)
 
